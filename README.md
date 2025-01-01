@@ -40,3 +40,20 @@ https://github.com/junegunn/fzf
 ```sh
 brew install fzf
 ```
+
+## tools
+
+[pipx](https://pipx.pypa.io/stable/) and [poetry](https://python-poetry.org/docs/)
+
+```shell
+brew install pipx && pipx install poetry
+```
+
+## golangci-lint
+
+```sh
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.62.2
+golangci-lint --version
+```
+
+([link](https://golangci-lint.run/welcome/install/#binaries))
