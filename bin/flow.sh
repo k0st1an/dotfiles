@@ -7,6 +7,22 @@ FLOWRC=${FLOWRC:-~/.flowrc}
 # shellcheck source=/dev/null
 test -e "$FLOWRC" && source "$FLOWRC"
 
+function usage() {
+  echo "Usage: flow.sh [command] ..."
+  echo "Commands:"
+  echo "  git branch_name   Manage git branches"
+  echo "  chc [-h ...]      Connect to ClickHouse"
+  echo "    available variables in $FLOWRC:"
+  echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
+  echo "      CLICKHOUSE_VERSION (default: latest)"
+  echo "  help              Show this help message"
+}
+
+if [[ "$1" == "help" || "$1" == "" ]]; then
+  usage
+  exit
+fi
+
 if [[ "$1" == "git" ]]; then
   shift
 
@@ -49,12 +65,3 @@ if [[ "$1" == "chc" ]]; then
   docker run --rm -it --network host $CLICKHOUSE_HISTORY_FILE --entrypoint clickhouse-client clickhouse:$CLICKHOUSE_VERSION $CLICKHOUSE_ARGS
   exit
 fi
-
-echo "Usage: flow.sh [command] ..."
-echo "Commands:"
-echo "  git branch_name   Manage git branches"
-echo "  chc [-h ...]      Connect to ClickHouse"
-echo "    available variables in $FLOWRC:"
-echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
-echo "      CLICKHOUSE_VERSION (default: latest)"
-echo "  help              Show this help message"
