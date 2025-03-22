@@ -43,8 +43,10 @@ if [[ "$1" == "chc" ]]; then
     CLICKHOUSE_HISTORY_FILE="-v $HOME/.clickhouse-client-history:/root/.clickhouse-client-history"
   fi
 
+  CLICKHOUSE_VERSION=${CLICKHOUSE_VERSION:-latest}
+
   # shellcheck disable=SC2086
-  docker run --rm -it --network host $CLICKHOUSE_HISTORY_FILE --entrypoint clickhouse-client clickhouse $CLICKHOUSE_ARGS
+  docker run --rm -it --network host $CLICKHOUSE_HISTORY_FILE --entrypoint clickhouse-client clickhouse:$CLICKHOUSE_VERSION $CLICKHOUSE_ARGS
   exit
 fi
 
@@ -52,4 +54,7 @@ echo "Usage: flow.sh [command] ..."
 echo "Commands:"
 echo "  git branch_name   Manage git branches"
 echo "  chc [-h ...]      Connect to ClickHouse"
+echo "    available variables in $FLOWRC:"
+echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
+echo "      CLICKHOUSE_VERSION (default: latest)"
 echo "  help              Show this help message"
