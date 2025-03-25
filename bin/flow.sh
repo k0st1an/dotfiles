@@ -33,7 +33,7 @@ if [[ "$1" == "git" ]]; then
     exit 1
   fi
 
-  test ! -x "$(whereis -q git)" && echo "git is not installed" && exit 1
+  test ! -x "$(which git)" && echo "git is not installed" && exit 1
   test ! -d .git && echo "directory .git not found" && exit 1
 
   git branch -D "$BRANCH_NAME"
@@ -46,7 +46,7 @@ fi
 if [[ "$1" == "chc" ]]; then
   shift
 
-  test ! -x "$(whereis -q docker)" && echo "docker is not installed" && exit 1
+  test ! -x "$(which docker)" && echo "docker is not installed" && exit 1
 
   if [[ -n "$*" ]]; then
     CLICKHOUSE_ARGS="$*"
