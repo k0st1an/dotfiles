@@ -10,7 +10,7 @@ test -e "$FLOWRC" && source "$FLOWRC"
 function usage() {
   echo "Usage: flow.sh [command] ..."
   echo "Commands:"
-  echo "  git branch_name   Manage git branches"
+  echo "  gr branch_name    delete branch"
   echo "  chc [-h ...]      Connect to ClickHouse"
   echo "    available variables in $FLOWRC:"
   echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
@@ -23,7 +23,7 @@ if [[ "$1" == "help" || "$1" == "" ]]; then
   exit
 fi
 
-if [[ "$1" == "git" ]]; then
+if [[ "$1" == "gr" ]]; then
   shift
 
   if [[ -n "$1" ]]; then
