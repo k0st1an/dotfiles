@@ -1,4 +1,4 @@
-# confs
+# dotfiles
 
 > macOS, iTerm2
 
@@ -24,8 +24,9 @@ brew tap homebrew/cask-fonts && \
 brew install --cask font-fira-code
 ```
 
+```
 iTerm2 > Settings... > Profiles > Text > Font > FiraCode
-
+```
 ## oh-my-zsh
 
 ```sh
@@ -35,7 +36,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ### plugins
 #### zsh-interactive-cd
 
-https://github.com/junegunn/fzf
+- https://github.com/junegunn/fzf
 
 ```sh
 brew install fzf
@@ -57,3 +58,15 @@ golangci-lint --version
 ```
 
 ([link](https://golangci-lint.run/welcome/install/#binaries))
+
+## colima
+
+- https://github.com/abiosoft/colima
+
+```sh
+brew install colima
+```
+
+```sh
+colima start --cpu 4 --memory 5 --disk 10 --vm-type vz -p default
+```
