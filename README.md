@@ -9,6 +9,12 @@
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ```
 
+## coreutils
+
+```sh
+brew install coreutils
+```
+
 ## color theme
 
 - https://gogh-co.github.io/Gogh/
