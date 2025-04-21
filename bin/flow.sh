@@ -43,6 +43,12 @@ if [[ "$1" == "gr" ]]; then
   exit
 fi
 
+if [[ "$1" == "grb" ]]; then
+  git fetch origin main
+  git rebase origin/main
+  exit
+fi
+
 if [[ "$1" == "chc" ]]; then
   shift
 
