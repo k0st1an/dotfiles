@@ -45,7 +45,7 @@ fi
 
 if [[ "$1" == "grb" ]]; then
   git fetch origin main
-  git rebase origin/main
+  git rebase -v origin/main
   exit
 fi
 
