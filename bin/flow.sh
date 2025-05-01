@@ -13,8 +13,10 @@ function usage() {
   echo "  gr branch_name    delete branch"
   echo "  chc [-h ...]      Connect to ClickHouse"
   echo "    available variables in $FLOWRC:"
+  echo "      CLICKHOUSE_ARGS"
   echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
   echo "      CLICKHOUSE_VERSION (default: latest)"
+  echo "  grb               rebase main branch"
   echo "  help              Show this help message"
 }
 
@@ -71,3 +73,5 @@ if [[ "$1" == "chc" ]]; then
   docker run --rm -it --network host $CLICKHOUSE_HISTORY_FILE --entrypoint clickhouse-client clickhouse:$CLICKHOUSE_VERSION $CLICKHOUSE_ARGS
   exit
 fi
+
+usage
