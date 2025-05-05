@@ -76,3 +76,15 @@ brew install colima
 ```sh
 colima start --cpu 4 --memory 5 --disk 10 --vm-type vz -p default
 ```
+
+## libpq
+
+```sh
+brew install libpq
+```
+
+Update the path:
+
+```sh
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+```
