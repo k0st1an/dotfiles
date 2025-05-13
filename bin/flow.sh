@@ -11,12 +11,12 @@ function usage() {
   echo "Usage: flow.sh [command] ..."
   echo "Commands:"
   echo "  gr branch_name    delete branch"
+  echo "  grb               rebase main branch"
   echo "  cc [-h ...]       Connect to ClickHouse"
   echo "    available variables in $FLOWRC:"
   echo "      CLICKHOUSE_ARGS"
   echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
   echo "      CLICKHOUSE_VERSION (default: latest)"
-  echo "  grb               rebase main branch"
   echo "  help              Show this help message"
 }
 
