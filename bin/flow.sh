@@ -11,7 +11,7 @@ function usage() {
   echo "Usage: flow.sh [command] ..."
   echo "Commands:"
   echo "  gr branch_name    delete branch"
-  echo "  chc [-h ...]      Connect to ClickHouse"
+  echo "  cc [-h ...]       Connect to ClickHouse"
   echo "    available variables in $FLOWRC:"
   echo "      CLICKHOUSE_ARGS"
   echo "      CLICKHOUSE_HISTORY_ENABLED (default: false)"
@@ -51,7 +51,7 @@ if [[ "$1" == "grb" ]]; then
   exit
 fi
 
-if [[ "$1" == "chc" ]]; then
+if [[ "$1" == "cc" ]]; then
   shift
 
   test ! -x "$(which docker)" && echo "docker is not installed" && exit 1
