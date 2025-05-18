@@ -40,15 +40,16 @@ if [[ "$1" == "gr" ]]; then
 
   git branch -D "$BRANCH_NAME"
   git branch -dr origin/"$BRANCH_NAME"
+  EXIT_CODE=$?
 
   echo "Branch $BRANCH_NAME deleted locally and remotely."
-  exit
+  exit $EXIT_CODE
 fi
 
 if [[ "$1" == "grb" ]]; then
   git fetch origin main
   git rebase -v origin/main
-  exit
+  exit $?
 fi
 
 if [[ "$1" == "cc" ]]; then
@@ -71,7 +72,7 @@ if [[ "$1" == "cc" ]]; then
 
   # shellcheck disable=SC2086
   docker run --rm -it --network host $CLICKHOUSE_HISTORY_FILE --entrypoint clickhouse-client clickhouse:$CLICKHOUSE_VERSION $CLICKHOUSE_ARGS
-  exit
+  exit $?
 fi
 
 usage
