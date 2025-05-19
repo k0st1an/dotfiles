@@ -74,7 +74,7 @@ brew install colima
 ```
 
 ```sh
-colima start --cpu 4 --memory 5 --disk 10 --vm-type vz -p default
+colima start --cpu 4 --memory 5 --disk 50 --vm-type vz
 ```
 
 ## libpq
