@@ -1,6 +1,6 @@
 # cat .zshrc | grep -vE "^#|^$"
 
-ZSH_THEME="mytheme"
+ZSH_THEME="flow42"
 plugins=(git timer history zsh-interactive-cd fzf common-aliases)
 source $ZSH/oh-my-zsh.sh
 alias flusdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
