@@ -1,7 +1,7 @@
 # cat .zshrc | grep -vE "^#|^$"
 
 ZSH_THEME="mytheme"
-plugins=(git timer history zsh-interactive-cd fzf)
+plugins=(git timer history zsh-interactive-cd fzf common-aliases)
 source $ZSH/oh-my-zsh.sh
 alias flusdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 bindkey "^[[1;5F" forward-word
